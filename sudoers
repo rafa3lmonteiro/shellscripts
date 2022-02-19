@@ -1,0 +1,254 @@
+########################################
+# Sudoers padrao
+########################################
+#
+# Versao: 1.0
+# Autor: Rafael Monteiro
+# Sudoers para servidores Linux.
+#
+# ultima edicao: 02/18/2022
+###############################################################################
+
+##
+# Configuracao Padrao
+##
+
+###############################################################################
+
+Defaults logfile=/var/log/sudo.log
+Defaults always_set_home
+Defaults env_reset
+Defaults loglinelen=0
+Defaults log_year
+Defaults log_host
+Defaults:%tvtunix3 !env_reset
+
+# O # abaixo nao significa comentario!
+#include /etc/sudoers.d/custom.sudoers
+
+###############################################################################
+
+##
+# Definicao dos Grupos - TIVIT
+##
+
+###############################################################################
+
+## ROOT funciona com o SUDO
+root ALL = (root) NOPASSWD: ALL
+
+# UNIX
+User_Alias UNIX_TVTS=%tvtunix3,%tvtunix1
+
+# DBA
+User_Alias DBA_TVTS=%tvtdba1,%tvtdba3
+
+# PRODUCAO
+User_Alias PRO_TVTS=%tvtprdop
+
+# SAP
+User_Alias SAP_TVTS=%tvtsap
+
+# Data Protection
+User_Alias BCK_TVTS=%tvtbkp
+
+# Automacao
+#User_Alias AUT_TVTS=
+
+###############################################################################
+
+##
+# Definicao dos grupos - Non sysadmins
+##
+
+###############################################################################
+
+User_Alias SAP_AES=%aessap
+
+###############################################################################
+
+##
+# Declaracao dos grupos de comandos - admins
+##
+
+###############################################################################
+
+Cmnd_Alias SUADM_ALL = /bin/su "", \
+                         /bin/su -, \
+                         /bin/su root, \
+                         /bin/su - root, \
+                         /bin/su *, \
+                         /usr/bin/su "", \
+                         /usr/bin/su -, \
+                         /usr/bin/su root, \
+                         /usr/bin/su - root, \
+                         /usr/bin/su *
+
+# Shells
+Cmnd_Alias  SHELLS_ALL = /bin/ash, \
+                        /bin/bash, \
+                        /bin/bash1, \
+                        /bin/bash2, \
+                        /bin/rbash, \
+                        /bin/bsh, \
+                        /bin/ch, \
+                        /bin/csh,\
+                        /bin/jsh, \
+                        /bin/ksh, \
+                        /bin/ksh93, \
+                        /bin/pfcsh, \
+                        /bin/pfksh, \
+                        /bin/pfsh, \
+                        /bin/psh, \
+                        /bin/rksh, \
+                        /bin/rsh, \
+                        /bin/sh, \
+                        /bin/tcsh, \
+                        /bin/tsh, \
+                        /bin/zsh, \
+                        /sbin/jsh, \
+                        /sbin/pfsh, \
+                        /sbin/sh, \
+                        /usr/bin/bash, \
+                        /usr/bin/bsh, \
+                        /usr/bin/csh, \
+                        /usr/bin/jsh, \
+                        /usr/bin/ksh, \
+                        /usr/bin/pdksh, \
+                        /usr/bin/pfcsh, \
+                        /usr/bin/pfksh, \
+                        /usr/bin/pfsh, \
+                        /usr/bin/psh, \
+                        /usr/bin/rksh, \
+                        /usr/bin/rsh, \
+                        /usr/bin/sh, \
+                        /usr/bin/tcsh, \
+                        /usr/bin/tsh, \
+                        /usr/bin/zsh, \
+                        /usr/xpg4/bin/sh
+
+Cmnd_Alias SHELLESCAPE_ALL= /usr/bin/ed , \
+                        /usr/bin/bash2bug, \
+                        /usr/bin/bashbug, \
+                        /usr/bin/ftp, \
+                        /usr/bin/less, \
+                        /usr/bin/more, \
+                        /usr/bin/vi, \
+                        /bin/vi, \
+                        /bin/ex, \
+                        /bin/view, \
+                        /bin/gvim, \
+                        /bin/gview, \
+                        /bin/evim, \
+                        /bin/eview, \
+                        /bin/vimdiff,\
+                        /usr/bin/vi, \
+                        /usr/bin/ex, \
+                        /usr/bin/view, \
+                        /usr/bin/gvim, \
+                        /usr/bin/gview, \
+                        /usr/bin/evim,\
+                        /usr/bin/eview, \
+                        /usr/bin/vimdiff,\
+                        /bin/more, \
+                        /bin/less
+
+# Comandos do CTMAGENT
+
+Cmnd_Alias CTM_CMDS_SU= /bin/su - ctmagent
+
+# Comandos do TADDM
+
+Cmnd_Alias TADDM_CMDS=/bin/cat, \
+                        /sbin/lvdisplay, \
+                        /sbin/mii-tool, \
+                        /sbin/pvdisplay, \
+                        /sbin/vgdisplay, \
+                        /usr/bin/cat, \
+                        /usr/bin/cksum, \
+                        /usr/bin/dd, \
+                        /usr/dd, \
+                        /usr/sbin/cat, \
+                        /usr/sbin/dmidecode, \
+                        /usr/sbin/ethtool, \
+                        /usr/sbin/lsof, \
+                        /usr/sbin/lvdisplay, \
+                        /usr/sbin/pvdisplay, \
+                        /usr/sbin/vgdisplay, \
+                        /usr/bin/crontab
+
+# Comandos DBA
+
+Cmnd_Alias DBA_CMDS_SU=/bin/su - ora*[a-z], \
+                         /bin/su - livereorg, \
+                         /bin/su - asm*[a-z], \
+                         /bin/su - dba*[a-z]
+
+# Comandos SAP
+
+Cmnd_Alias SAP_CMDS_SU=/bin/su - ...adm
+
+# Comandos Data Protection
+
+Cmnd_Alias BCK_CMDS=/bin/mount -t nfs * /mnt, \
+                    /bin/umount -f /mnt, \
+                    /bin/umount /mnt, \
+                    /bin/umount -l /mnt, \
+                    /bin/rm -* /usr/openv/[!'..']*, \
+                    /bin/cp /usr/openv/[!'..']*, \
+                    /bin/cp -* /usr/openv/[!'..']*, \
+                    /bin/mv -* /usr/openv/[!'..']*, \
+                    /bin/chown -* /usr/openv/[!'..']*, \
+                    /bin/chmod -* /usr/openv/[!'..']*
+
+
+# Comandos Automacao
+
+#Cmnd_Alias AUT_CMDS=
+
+###############################################################################
+
+##
+# Definicao de comandos - NON sysadmins
+##
+
+###############################################################################
+
+
+
+###############################################################################
+
+##
+# Associacao dos Usuarios e os grupos de comandos - TIVIT
+##
+
+###############################################################################
+
+# Grupo de comandos permitidos aos admins Unix
+UNIX_TVTS ALL = NOPASSWD: ALL, !SHELLS_ALL, !SUADM_ALL, NOEXEC: SHELLESCAPE_ALL
+
+# Grupo de comandos permitidos aos TVTs DBAs
+DBA_TVTS  ALL = NOPASSWD: DBA_CMDS_SU
+
+# Grupo de comandos permitidos aos TVTs SAP
+SAP_TVTS  ALL = NOPASSWD: SAP_CMDS_SU
+
+# Grupo de comandos permitidos ao Usuario COLL
+coll ALL = (root) NOPASSWD: TADDM_CMDS
+
+# Grupo de comandos permitidos aos TVTs PRO
+PRO_TVTS ALL = NOPASSWD: CTM_CMDS_SU
+
+# Grupo de comandos permitidos aos TVTs PRO
+#AUT_TVTS ALL = NOPASSWD:
+
+BCK_TVTS ALL = NOPASSWD: BCK_CMDS
+
+###############################################################################
+
+##
+# Quaisquer alteracao ou adicao de alguma particularidade do servidor deve ser
+# adicionado no arquivo /etc/sudoers.d/custom.sudoers
+##
+
+###############################################################################
