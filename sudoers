@@ -29,7 +29,7 @@ Defaults:%tvtunix3 !env_reset
 ###############################################################################
 
 ##
-# Definicao dos Grupos - TIVIT
+# Definicao dos Grupos 
 ##
 
 ###############################################################################
@@ -219,7 +219,7 @@ Cmnd_Alias BCK_CMDS=/bin/mount -t nfs * /mnt, \
 ###############################################################################
 
 ##
-# Associacao dos Usuarios e os grupos de comandos - TIVIT
+# Associacao dos Usuarios e os grupos de comandos - 
 ##
 
 ###############################################################################
