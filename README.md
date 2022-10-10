@@ -1,4 +1,5 @@
-# linux
-jobs linux 
+# Linux
+Linux projects and jobs 
 
-examples of linux configuration files
+- Shell scripts
+- Linux configuration files
