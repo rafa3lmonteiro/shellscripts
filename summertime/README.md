@@ -1,6 +1,4 @@
-# summertime project
-# Rafael Monteiro
-# 02/18/2022
+# Summertime project
 
 These are code files to check summertime
 
