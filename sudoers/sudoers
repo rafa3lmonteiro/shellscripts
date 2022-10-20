@@ -1,16 +1,16 @@
 ########################################
-# Sudoers padrao
+# Sudoers standard
 ########################################
 #
 # Versao: 1.0
 # Autor: Rafael Monteiro
-# Sudoers para servidores Linux.
+# Sudoers for Linux servers.
 #
-# ultima edicao: 02/18/2022
+# edit: 02/18/2022
 ###############################################################################
 
 ##
-# Configuracao Padrao
+# standard configuration
 ##
 
 ###############################################################################
@@ -23,18 +23,18 @@ Defaults log_year
 Defaults log_host
 Defaults:%tvtunix3 !env_reset
 
-# O # abaixo nao significa comentario!
+
 #include /etc/sudoers.d/custom.sudoers
 
 ###############################################################################
 
 ##
-# Definicao dos Grupos 
+# group definition 
 ##
 
 ###############################################################################
 
-## ROOT funciona com o SUDO
+## ROOT works with the SUDO
 root ALL = (root) NOPASSWD: ALL
 
 # UNIX
@@ -43,7 +43,7 @@ User_Alias UNIX_TVTS=%tvtunix3,%tvtunix1
 # DBA
 User_Alias DBA_TVTS=%tvtdba1,%tvtdba3
 
-# PRODUCAO
+# PRODUCTION
 User_Alias PRO_TVTS=%tvtprdop
 
 # SAP
@@ -58,7 +58,7 @@ User_Alias BCK_TVTS=%tvtbkp
 ###############################################################################
 
 ##
-# Definicao dos grupos - Non sysadmins
+# group definition - Non sysadmins
 ##
 
 ###############################################################################
@@ -68,7 +68,7 @@ User_Alias SAP_AES=%aessap
 ###############################################################################
 
 ##
-# Declaracao dos grupos de comandos - admins
+# Statement of command groups - administrators
 ##
 
 ###############################################################################
