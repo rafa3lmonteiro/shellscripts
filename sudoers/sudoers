@@ -21,7 +21,7 @@ Defaults env_reset
 Defaults loglinelen=0
 Defaults log_year
 Defaults log_host
-Defaults:%tvtunix3 !env_reset
+Defaults:%USRunix3 !env_reset
 
 
 #include /etc/sudoers.d/custom.sudoers
@@ -38,22 +38,22 @@ Defaults:%tvtunix3 !env_reset
 root ALL = (root) NOPASSWD: ALL
 
 # UNIX
-User_Alias UNIX_TVTS=%tvtunix3,%tvtunix1
+User_Alias UNIX_USR=%USRunix3,%USRunix1
 
 # DBA
-User_Alias DBA_TVTS=%tvtdba1,%tvtdba3
+User_Alias DBA_USR=%USRdba1,%USRdba3
 
 # PRODUCTION
-User_Alias PRO_TVTS=%tvtprdop
+User_Alias PRO_USR=%USRprdop
 
-# SAP
-User_Alias SAP_TVTS=%tvtsap
+# APP
+User_Alias APP_USR=%USRAPP
 
 # Data Protection
-User_Alias BCK_TVTS=%tvtbkp
+User_Alias BCK_USR=%USRbkp
 
 # Automacao
-#User_Alias AUT_TVTS=
+#User_Alias AUT_USR=
 
 ###############################################################################
 
@@ -63,7 +63,7 @@ User_Alias BCK_TVTS=%tvtbkp
 
 ###############################################################################
 
-User_Alias SAP_AES=%aessap
+User_Alias APP_EMP=%empAPP
 
 ###############################################################################
 
@@ -153,11 +153,11 @@ Cmnd_Alias SHELLESCAPE_ALL= /usr/bin/ed , \
                         /bin/more, \
                         /bin/less
 
-# Comandos do CTMAGENT
+# Comandos do APPAGENT
 
-Cmnd_Alias CTM_CMDS_SU= /bin/su - ctmagent
+Cmnd_Alias CTM_CMDS_SU= /bin/su - APPAGENT
 
-# Comandos do TADDM
+# Comandos do APP
 
 Cmnd_Alias TADDM_CMDS=/bin/cat, \
                         /sbin/lvdisplay, \
@@ -184,9 +184,9 @@ Cmnd_Alias DBA_CMDS_SU=/bin/su - ora*[a-z], \
                          /bin/su - asm*[a-z], \
                          /bin/su - dba*[a-z]
 
-# Comandos SAP
+# Comandos APP
 
-Cmnd_Alias SAP_CMDS_SU=/bin/su - ...adm
+Cmnd_Alias APP_CMDS_SU=/bin/su - ...adm
 
 # Comandos Data Protection
 
@@ -225,29 +225,29 @@ Cmnd_Alias BCK_CMDS=/bin/mount -t nfs * /mnt, \
 ###############################################################################
 
 # Grupo de comandos permitidos aos admins Unix
-UNIX_TVTS ALL = NOPASSWD: ALL, !SHELLS_ALL, !SUADM_ALL, NOEXEC: SHELLESCAPE_ALL
+UNIX_USR ALL = NOPASSWD: ALL, !SHELLS_ALL, !SUADM_ALL, NOEXEC: SHELLESCAPE_ALL
 
-# Grupo de comandos permitidos aos TVTs DBAs
-DBA_TVTS  ALL = NOPASSWD: DBA_CMDS_SU
+# Grupo de comandos permitidos aos USR DBAs
+DBA_USR  ALL = NOPASSWD: DBA_CMDS_SU
 
-# Grupo de comandos permitidos aos TVTs SAP
-SAP_TVTS  ALL = NOPASSWD: SAP_CMDS_SU
+# Grupo de comandos permitidos aos USR APP
+APP_USR  ALL = NOPASSWD: APP_CMDS_SU
 
 # Grupo de comandos permitidos ao Usuario COLL
 coll ALL = (root) NOPASSWD: TADDM_CMDS
 
-# Grupo de comandos permitidos aos TVTs PRO
-PRO_TVTS ALL = NOPASSWD: CTM_CMDS_SU
+# Grupo de comandos permitidos aos USR PRO
+PRO_USR ALL = NOPASSWD: CTM_CMDS_SU
 
-# Grupo de comandos permitidos aos TVTs PRO
-#AUT_TVTS ALL = NOPASSWD:
+# Grupo de comandos permitidos aos USR PRO
+#AUT_USR ALL = NOPASSWD:
 
-BCK_TVTS ALL = NOPASSWD: BCK_CMDS
+BCK_USR ALL = NOPASSWD: BCK_CMDS
 
 ###############################################################################
 
 ##
-# Quaisquer alteracao ou adicao de alguma particularidade do servidor deve ser
+# Quaisquer alteracao ou adicao de alguma particularidade no servidor deve ser
 # adicionado no arquivo /etc/sudoers.d/custom.sudoers
 ##
 
