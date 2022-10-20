@@ -2,7 +2,7 @@
 #########################################################
 # Rafael Monteiro					#
 #							#
-# Script para as checagem do servidor no remoto:	#
+# Script para as checagens do servidor no remoto:	#
 #- Checagem de diferença de horario client/server	#
 #- Checagem de Zdump [Timezone]				#
 #- Checagem de status NTPQ				#
@@ -13,7 +13,7 @@
 #- sshpass						#
 #- lista de servidores para checagem 			#	
 # 							#
-# Ultima atualizacao: Out/2018 				#
+# Ultima atualizacao: Out/2020 				#
 #########################################################
 
 #datafile=`date +%Y%m%d-%H%M`
