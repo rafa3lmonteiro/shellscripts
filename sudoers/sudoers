@@ -6,7 +6,7 @@
 # Autor: Rafael Monteiro
 # Sudoers for Linux servers.
 #
-# edit: 02/18/2022
+# edit: 10/19/2022
 ###############################################################################
 
 ##
@@ -247,7 +247,7 @@ BCK_USR ALL = NOPASSWD: BCK_CMDS
 ###############################################################################
 
 ##
-# Quaisquer alteracao ou adicao de alguma particularidade no servidor deve ser
+# Quaisquer alteracao ou adicao de alguma particularidade no servidor, deve ser
 # adicionado no arquivo /etc/sudoers.d/custom.sudoers
 ##
 
