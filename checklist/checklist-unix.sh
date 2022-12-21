@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Rafael Monteiro
-# ultima alteracao - 12/04/2018
+# 
+# last edit - 12/04/2018
 #
 # checklist-unix.sh
 # checklist-unix

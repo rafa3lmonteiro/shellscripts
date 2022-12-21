@@ -1,6 +1,6 @@
 #!/bin/bash      
 #########################################################
-# Rafael Monteiro					#
+#               					#
 #							#
 # Script para as checagens do servidor no remoto:	#
 #- Checagem de diferença de horario client/server	#

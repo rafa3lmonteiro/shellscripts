@@ -1,9 +1,8 @@
 #!/bin/sh
-#
+
 # mod_SunOS.sh
 # checklist-unix
 #
-# Rafael Monteiro
 # ultima alteracao - 12/04/2018
 #
 #

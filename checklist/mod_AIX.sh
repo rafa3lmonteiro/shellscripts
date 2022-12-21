@@ -1,9 +1,8 @@
 #!/bin/ksh
-#
+
 # mod_AIX.sh
 # checklist-unix
 #
-# Rafael Monteiro
 # ultima alteracao - 12/04/2018
 #
 ##############################################################################
