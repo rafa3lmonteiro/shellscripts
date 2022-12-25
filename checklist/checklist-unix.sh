@@ -1,13 +1,10 @@
 #!/bin/sh
-
-# 
+##############################################################################
+# Rafael Monteiro
 # last edit - 12/04/2018
 #
 # checklist-unix.sh
-# checklist-unix
-# 
 ##############################################################################
-#
 
 # GLOBAL VARIABLES
 CHKU_PATH=/opt/checklist-unix
