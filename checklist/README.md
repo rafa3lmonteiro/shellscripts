@@ -1,2 +1,2 @@
-# checklist-unix
+# checklist
 checklist scripts for check features and services

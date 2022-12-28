@@ -1,13 +1,13 @@
 #!/bin/sh
 ##############################################################################
-# Rafael Monteiro
-# last edit - 12/04/2018
+# 
+# edit - 12/04/2018
 #
-# checklist-unix.sh
+# checklist.sh
 ##############################################################################
 
 # GLOBAL VARIABLES
-CHKU_PATH=/opt/checklist-unix
+CHKU_PATH=/opt/checklist
 CHKU_MODULES=$CHKU_PATH/modulos
 CHKU_FILES=$CHKU_PATH/files
 CHKU_LOGS=$CHKU_PATH/logs
@@ -26,7 +26,7 @@ CHKU_VERSION="2.6"
 # INICIO
 ##############################################################################
 
-# Pre-checagens
+# checagens
 # Verifica se o Sistema Operacional está disponível
 if [ ! -f $CHKU_MODULES/mod_$CHKU_SO.sh ]; then
 
@@ -120,7 +120,7 @@ comparacheck ()
 	esac
 }
 
-# inicia parametros do checklist-unix
+# inicia parametros do checklist
 case $1 in
 
 	-g)
@@ -153,7 +153,7 @@ case $1 in
 		if [ ! -n "$2" ]; then
 			echo ""
 			echo "ERRO 3: Parametro do -cd deve conter uma data no formato DDMMAAAA.hhmm"
-			echo "Exemplo: checklist-unix.sh -cd 10062010.1030"
+			echo "Exemplo: checklist.sh -cd 10062010.1030"
 			echo "Voce pode verificar as datas existentes, utilize: $0 -cl"
 			echo ""
 			exit 3
@@ -226,7 +226,7 @@ case $1 in
 
 	-v)
 
-		echo "checklist-unix version $CHKU_VERSION" 
+		echo "checklist version $CHKU_VERSION" 
 	
 	;;
         
