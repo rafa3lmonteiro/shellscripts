@@ -1,21 +1,18 @@
 #!/bin/bash
 #########################################################
-# Script para as checagem de Timezone no servidor:		#
-#														#
-#- Checagem de diferença de horario client/server		#
-#- Checagem de Zdump [Timezone]							#
-#- Checagem de status NTPQ								#
-#														#
-#Depende:												#
-#- Script checa_timezone.sh								#
-#- binario NC (netcat)									#
-#- sshpass												#
-#- lista de servidores para checagem 					#
-#														#		
-#  														#	
-# 				 										#
-# 														#
-# Ultima atualizacao: Out/2018 							#
+# Script para as checagem de Timezone no servidor:		
+#														
+#- Checagem de diferença de horario client/server		
+#- Checagem de Zdump [Timezone]							
+#- Checagem de status NTPQ								
+#														
+#Depende:												
+#- Script checa_timezone.sh								
+#- binario NC (netcat)									
+#- sshpass												
+#- lista de servidores para checagem 					
+#																  														#	 				 										#														#
+# Ultima atualizacao: Out/2018 							
 #########################################################
 
 
