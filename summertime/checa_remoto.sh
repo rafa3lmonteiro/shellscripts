@@ -1,7 +1,6 @@
 #!/bin/bash      
 #########################################################
-#               					#
-#							#
+#               					#							
 # Script para as checagens do servidor no remoto:	#
 #- Checagem de diferença de horario client/server	#
 #- Checagem de Zdump [Timezone]				#
