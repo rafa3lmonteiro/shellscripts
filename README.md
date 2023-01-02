@@ -1,8 +1,10 @@
-# Linux
-Linux and Unix projects and jobs 
+# Shell scripts
+
+Linux and Unix projects 
 
 - Shell script codes
-- Linux and unix configuration files
+- Linux and unix configuration files and others things more
+
 
 
 License
