@@ -4,4 +4,4 @@
 # Used to change password in scripts without needing human interaction.
 #
 
-echo -e "suasenha\nsuasenha\n" |passwd
+echo -e "yourpassword\nyourpassword\n" |passwd
