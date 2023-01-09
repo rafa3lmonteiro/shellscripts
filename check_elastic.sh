@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Check ElasticSearch
+#
 
 host=`hostname -i | cut -d " " -f 2`
 
