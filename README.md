@@ -1,9 +1,8 @@
 # Shell scripts
 
-Linux and Unix projects 
+- Linux and Unix projects in Shell script
 
-- Shell script codes
-- Linux and unix configuration files and others things more
+- Linux and Unix configuration files and others things more
 
 
 
