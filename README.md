@@ -3,6 +3,7 @@
 Linux and Unix projects 
 
 - Shell script codes
+- Scripts to monitoring
 - Linux and unix configuration files and others things more
 
 
